@@ -8,7 +8,7 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
-import CssBaseline from '@material-ui/core/CssBaseLine';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +56,7 @@ function AddNewUser(props) {
     console.log("Check?");
     console.log([supplyChain]);
     const handleInputChange = (e) => {
+      console.log("handling inputchange");
         if (e.target.id === 'name') {
            setName(e.target.value);     
         } else if(e.target.id === 'locationx') {
@@ -67,10 +68,12 @@ function AddNewUser(props) {
         } else if(e.target.id === 'address') {
             setAddress(e.target.value);
         }
+        
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("handling submit");
         isLoading(true);
         var n = web3.utils.padRight(web3.utils.fromAscii(name), 64);
         var loc = [String(locationx), String(locationy)];
@@ -79,6 +82,7 @@ function AddNewUser(props) {
             console.log(receipt);
             isLoading(false);
         })
+        console.log("Done adding!");
     }
 
     function getEventData() {

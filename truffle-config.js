@@ -2,10 +2,10 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 7545,
+      port: 9545,
       network_id: "5777",
       gas: 6721975,
-      from: "0x665B67F74a1729EA4681717A8dC43a426Fe70C64",
+      from: "0xEb6D46cA50a6228CB5e76611EFDAE8b1516a21c0",
     },
   },
   contracts_directory: "./testing/",
